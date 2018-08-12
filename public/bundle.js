@@ -117,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 1.6rem; }\n\n.header {\n  background: #20222b;\n  color: #fff;\n  margin-bottom: 4.8rem;\n  padding: 1.6rem 0; }\n\n.header__title {\n  font-size: 3.2rem;\n  margin: 0; }\n\n.header__subtitle {\n  color: #a5afd7;\n  font-size: 1.6rem;\n  font-weight: 500;\n  margin: 0; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  background: #333745;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 1.6rem; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.add-option-error {\n  color: #a5afd7;\n  font-style: italic;\n  padding: 0 1.6rem;\n  margin-top: 1.6rem;\n  text-align: center; }\n\n.form-Content {\n  display: flex;\n  padding: 1.6rem; }\n\n.form-Content__input {\n  background: #333745;\n  border: none;\n  border-bottom: solid 0.3rem #1d2028;\n  color: #a5afd7;\n  flex-grow: 1;\n  margin-right: 1.2rem;\n  padding: 1.2rem; }\n\n.form-Content__input:active {\n  border: none;\n  border-bottom: solid 0.3rem #464b5e; }\n\n.big-Button {\n  background: #8357c5;\n  border: none;\n  border-bottom: 0.6rem solid #693cad;\n  color: #fff;\n  font-weight: bold;\n  font-size: 3.3rem;\n  margin-bottom: 4.8rem;\n  padding: 2.4rem;\n  width: 100%; }\n\n.big-Button:disabled {\n  opacity: 0.5; }\n\n.button {\n  background: #8357c5;\n  border: none;\n  border-bottom: 0.3rem solid #693cad;\n  color: #fff;\n  font-weight: 500;\n  padding: 1.2rem; }\n\n.button--link {\n  background: none;\n  border: none;\n  color: #a5afd7;\n  padding: 0; }\n\n.container {\n  max-width: 60rem;\n  margin: 0 auto;\n  padding: 0 1.6rem; }\n\n.header {\n  background: #20222b;\n  color: #fff;\n  margin-bottom: 4.8rem;\n  padding: 1.6rem 0; }\n\n.header__title {\n  font-size: 3.3rem;\n  margin: 0; }\n\n.header__subtitle {\n  color: #a5afd7;\n  font-size: 1.6rem;\n  font-weight: 500;\n  margin: 0; }\n\n.option {\n  border-bottom: 1px solid #5c627b;\n  display: flex;\n  justify-content: space-between;\n  padding: 3.3rem 1.6rem; }\n\n.option__text {\n  color: #fff;\n  font-weight: 500;\n  font-size: 2rem;\n  margin: 0; }\n\n.widget {\n  background: #464b5e;\n  margin-bottom: 4.8rem; }\n\n.widget-Header {\n  background: #3c4251;\n  color: #a5afd7;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.6rem; }\n\n.widget--Title {\n  margin: 0; }\n\n.widget--contentTitle {\n  border-bottom: solid 1px #5c627b;\n  color: #a5afd7;\n  margin: 0;\n  padding: 3.3rem;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -22989,12 +22989,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Action = function Action(props) {
   return _react2.default.createElement(
-    'div',
+    "div",
     null,
     _react2.default.createElement(
-      'button',
-      { disabled: !props.hasOptions, onClick: props.handlePick },
-      'What should I do?'
+      "button",
+      { className: "big-Button", disabled: !props.hasOptions, onClick: props.handlePick },
+      "What should I do?"
     )
   );
 };
@@ -23071,17 +23071,21 @@ var AddOption = function (_React$Component) {
         null,
         this.state.error && _react2.default.createElement(
           "p",
-          null,
+          { className: "add-option-error" },
           this.state.error
         ),
         _react2.default.createElement(
           "form",
           { onSubmit: this.handleAddOption },
-          _react2.default.createElement("input", { type: "text", name: "optionText" }),
           _react2.default.createElement(
-            "button",
-            null,
-            "Add Option"
+            "div",
+            { className: "form-Content" },
+            _react2.default.createElement("input", { className: "form-Content__input", type: "text", name: "optionText" }),
+            _react2.default.createElement(
+              "button",
+              { className: "button" },
+              "Add Option"
+            )
           )
         )
       );
@@ -23120,14 +23124,18 @@ var Header = function Header(props) {
     "div",
     { className: "header" },
     _react2.default.createElement(
-      "h1",
-      { className: "header__title" },
-      props.title
-    ),
-    props.subtitle && _react2.default.createElement(
-      "h2",
-      { className: "header__subtitle" },
-      props.subtitle
+      "div",
+      { className: "container" },
+      _react2.default.createElement(
+        "h1",
+        { className: "header__title" },
+        props.title
+      ),
+      props.subtitle && _react2.default.createElement(
+        "h2",
+        { className: "header__subtitle" },
+        props.subtitle
+      )
     )
   );
 };
@@ -23275,18 +23283,26 @@ var IndecisionApp = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(_Header2.default, { subtitle: subtitle }),
-        _react2.default.createElement(_Action2.default, {
-          hasOptions: this.state.options.length > 0,
-          handlePick: this.handlePick
-        }),
-        _react2.default.createElement(_Options2.default, {
-          options: this.state.options,
-          hasOptions: this.state.options.length > 0,
-          removeOptions: this.removeOptions,
-          removeSingleOption: this.removeSingleOption
-        }),
-        _react2.default.createElement(_AddOption2.default, { addOption: this.addOption }),
-        _react2.default.createElement(_OptionModal2.default, { selectedOption: this.state.selectedOption, dismissModal: this.dismissModal })
+        _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(_Action2.default, {
+            hasOptions: this.state.options.length > 0,
+            handlePick: this.handlePick
+          }),
+          _react2.default.createElement(
+            'div',
+            { className: 'widget' },
+            _react2.default.createElement(_Options2.default, {
+              options: this.state.options,
+              hasOptions: this.state.options.length > 0,
+              removeOptions: this.removeOptions,
+              removeSingleOption: this.removeSingleOption
+            }),
+            _react2.default.createElement(_AddOption2.default, { addOption: this.addOption }),
+            _react2.default.createElement(_OptionModal2.default, { selectedOption: this.state.selectedOption, dismissModal: this.dismissModal })
+          )
+        )
       );
     }
   }]);
@@ -23321,17 +23337,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Option = function Option(props) {
   return _react2.default.createElement(
-    'div',
-    null,
-    props.optionText,
+    "div",
+    { className: "option" },
     _react2.default.createElement(
-      'button',
-      {
+      "p",
+      { className: "option__text" },
+      props.count,
+      ". ",
+      props.optionText
+    ),
+    _react2.default.createElement(
+      "button",
+      { className: "button button--link",
         onClick: function onClick(e) {
           props.removeSingleOption(props.optionText);
         }
       },
-      'Remove'
+      "Remove"
     )
   );
 };
@@ -23422,34 +23444,36 @@ var Options = function Options(props) {
   return _react2.default.createElement(
     'div',
     null,
-    props.hasOptions ? _react2.default.createElement(
-      'p',
-      null,
-      'Here are your options'
-    ) : _react2.default.createElement(
-      'p',
-      null,
-      'Please add an option to get started'
-    ),
     _react2.default.createElement(
-      'button',
-      { onClick: props.removeOptions, hidden: !props.hasOptions },
-      'Remove All'
+      'div',
+      { className: 'widget-Header' },
+      _react2.default.createElement(
+        'h3',
+        { className: 'widget--Title' },
+        'Your Options'
+      ),
+      _react2.default.createElement(
+        'button',
+        {
+          className: 'button button--link',
+          onClick: props.removeOptions,
+          hidden: !props.hasOptions },
+        'Remove All'
+      )
     ),
-    _react2.default.createElement(
-      'ol',
-      null,
-      props.options.map(function (option) {
-        return _react2.default.createElement(
-          'li',
-          { key: option },
-          _react2.default.createElement(_Option2.default, {
-            optionText: option,
-            removeSingleOption: props.removeSingleOption
-          })
-        );
-      })
-    )
+    !props.hasOptions && _react2.default.createElement(
+      'p',
+      { className: 'widget--contentTitle' },
+      'Please add an option to get started.'
+    ),
+    props.options.map(function (option, index) {
+      return _react2.default.createElement(_Option2.default, {
+        key: option,
+        optionText: option,
+        count: index + 1,
+        removeSingleOption: props.removeSingleOption
+      });
+    })
   );
 };
 

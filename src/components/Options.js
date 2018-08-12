@@ -4,20 +4,27 @@ import Option from './Option'
 const Options = props => {
     return (
       <div>
-        {props.hasOptions ? <p>Here are your options</p> : <p>Please add an option to get started</p>}
-        <button onClick={props.removeOptions} hidden={!props.hasOptions}>
-          Remove All
-        </button>
-        <ol>
-          {props.options.map(option => (
-            <li key={option}>
+        <div className="widget-Header">
+          <h3 className="widget--Title">Your Options</h3>
+          <button 
+          className="button button--link"
+          onClick={props.removeOptions} 
+          hidden={!props.hasOptions}>
+            Remove All
+          </button>
+        </div>
+        {!props.hasOptions && <p className="widget--contentTitle">Please add an option to get started.</p>}
+
+            {props.options.map((option, index) => (
               <Option
-                optionText={option}
-                removeSingleOption={props.removeSingleOption}
-              />
-            </li>
-          ))}
-        </ol>
+                  key={option}
+                  optionText={option}
+                  count={index +1}
+                  removeSingleOption={props.removeSingleOption}
+                />
+              
+            ))
+          }
       </div>
     );
   };

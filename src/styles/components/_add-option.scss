@@ -1,0 +1,28 @@
+.add-option-error {
+    color: $off-White;
+    font-style: italic;
+    padding: 0 $m-Size;
+    margin-top: $m-Size;
+    text-align: center;
+}
+
+// Form content
+.form-Content {
+    display: flex;
+    padding: $m-Size;
+}
+
+.form-Content__input {
+    background: $dark-Blue;
+    border: none;
+    border-bottom: solid 0.3rem darken($dark-Blue, 10%);
+    color: $off-White;
+    flex-grow: 1;
+    margin-right: $s-Size;
+    padding: $s-Size;
+}
+
+.form-Content__input:active {
+    border: none;
+    border-bottom: solid 0.3rem $light-Blue;
+}
