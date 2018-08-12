@@ -9,6 +9,7 @@
 // Form content
 .form-Content {
     display: flex;
+    flex-direction: column;
     padding: $m-Size;
 }
 
@@ -16,13 +17,19 @@
     background: $dark-Blue;
     border: none;
     border-bottom: solid 0.3rem darken($dark-Blue, 10%);
+    border-radius: $corner-Radius;
     color: $off-White;
     flex-grow: 1;
-    margin-right: $s-Size;
+    margin: 0 0 $s-Size 0;
     padding: $s-Size;
 }
 
-.form-Content__input:active {
-    border: none;
-    border-bottom: solid 0.3rem $light-Blue;
+@media (min-width: $desktop-BreakPoint) {
+    .form-Content {
+        flex-direction: row;
+        
+    }
+    .form-Content__input {
+        margin-right: $s-Size;
+    }
 }

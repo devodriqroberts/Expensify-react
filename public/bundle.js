@@ -117,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  background: #333745;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 1.6rem; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.add-option-error {\n  color: #a5afd7;\n  font-style: italic;\n  padding: 0 1.6rem;\n  margin-top: 1.6rem;\n  text-align: center; }\n\n.form-Content {\n  display: flex;\n  padding: 1.6rem; }\n\n.form-Content__input {\n  background: #333745;\n  border: none;\n  border-bottom: solid 0.3rem #1d2028;\n  color: #a5afd7;\n  flex-grow: 1;\n  margin-right: 1.2rem;\n  padding: 1.2rem; }\n\n.form-Content__input:active {\n  border: none;\n  border-bottom: solid 0.3rem #464b5e; }\n\n.big-Button {\n  background: #8357c5;\n  border: none;\n  border-bottom: 0.6rem solid #693cad;\n  color: #fff;\n  font-weight: bold;\n  font-size: 3.3rem;\n  margin-bottom: 4.8rem;\n  padding: 2.4rem;\n  width: 100%; }\n\n.big-Button:disabled {\n  opacity: 0.5; }\n\n.button {\n  background: #8357c5;\n  border: none;\n  border-bottom: 0.3rem solid #693cad;\n  color: #fff;\n  font-weight: 500;\n  padding: 1.2rem; }\n\n.button--link {\n  background: none;\n  border: none;\n  color: #a5afd7;\n  padding: 0; }\n\n.container {\n  max-width: 60rem;\n  margin: 0 auto;\n  padding: 0 1.6rem; }\n\n.header {\n  background: #20222b;\n  color: #fff;\n  margin-bottom: 4.8rem;\n  padding: 1.6rem 0; }\n\n.header__title {\n  font-size: 3.3rem;\n  margin: 0; }\n\n.header__subtitle {\n  color: #a5afd7;\n  font-size: 1.6rem;\n  font-weight: 500;\n  margin: 0; }\n\n.option {\n  border-bottom: 1px solid #5c627b;\n  display: flex;\n  justify-content: space-between;\n  padding: 3.3rem 1.6rem; }\n\n.option__text {\n  color: #fff;\n  font-weight: 500;\n  font-size: 2rem;\n  margin: 0; }\n\n.widget {\n  background: #464b5e;\n  margin-bottom: 4.8rem; }\n\n.widget-Header {\n  background: #3c4251;\n  color: #a5afd7;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.6rem; }\n\n.widget--Title {\n  margin: 0; }\n\n.widget--contentTitle {\n  border-bottom: solid 1px #5c627b;\n  color: #a5afd7;\n  margin: 0;\n  padding: 3.3rem;\n  text-align: center; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  background: #333745;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 1.6rem; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.add-option-error {\n  color: #a5afd7;\n  font-style: italic;\n  padding: 0 1.6rem;\n  margin-top: 1.6rem;\n  text-align: center; }\n\n.form-Content {\n  display: flex;\n  flex-direction: column;\n  padding: 1.6rem; }\n\n.form-Content__input {\n  background: #333745;\n  border: none;\n  border-bottom: solid 0.3rem #1d2028;\n  border-radius: 5px;\n  color: #a5afd7;\n  flex-grow: 1;\n  margin: 0 0 1.2rem 0;\n  padding: 1.2rem; }\n\n@media (min-width: 45rem) {\n  .form-Content {\n    flex-direction: row; }\n  .form-Content__input {\n    margin-right: 1.2rem; } }\n\n.big-Button {\n  background: #8357c5;\n  border: none;\n  border-bottom: 0.6rem solid #693cad;\n  border-radius: 5px;\n  color: #fff;\n  font-weight: bold;\n  font-size: 3.3rem;\n  margin-bottom: 1.6rem;\n  padding: 1rem;\n  width: 100%; }\n\n.big-Button:disabled {\n  opacity: 0.5; }\n\n.button {\n  background: #8357c5;\n  border: none;\n  border-bottom: 0.3rem solid #693cad;\n  border-radius: 5px;\n  color: #fff;\n  font-weight: 500;\n  padding: 1.2rem; }\n\n.button--link {\n  background: none;\n  border: none;\n  color: #a5afd7;\n  padding: 0; }\n\n@media (min-width: 45rem) {\n  .big-Button {\n    margin-bottom: 4.8rem;\n    padding: 2.4rem; } }\n\n.container {\n  max-width: 60rem;\n  margin: 0 auto;\n  padding: 0 1.6rem; }\n\n.header {\n  background: #20222b;\n  color: #fff;\n  margin-bottom: 1.6rem;\n  padding: 1.6rem 0; }\n\n.header__title {\n  font-size: 3.3rem;\n  margin: 0; }\n\n.header__subtitle {\n  color: #a5afd7;\n  font-size: 1.6rem;\n  font-weight: 500;\n  margin: 0; }\n\n@media (min-width: 45rem) {\n  .header {\n    margin-bottom: 4.8rem; } }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  transition: opacity 200ms ease-in-out; }\n\n.ReactModalPortal .ReactModal__Overlay--after-open {\n  opacity: 1; }\n\n.ReactModalPortal .ReactModal__Overlay--before-close {\n  opacity: 0; }\n\n.modal {\n  background: #464b5e;\n  border-radius: 5%;\n  color: #fff;\n  max-width: 30rem;\n  outline: none;\n  padding: 3.3rem;\n  text-align: center; }\n\n.modal__title {\n  margin: 0 0 1.6rem 0; }\n\n.modal__body {\n  font-size: 2rem;\n  font-weight: 300;\n  margin: 0 0 3.3rem 0;\n  word-break: break-all; }\n\n.option {\n  border-bottom: 1px solid #5c627b;\n  display: flex;\n  justify-content: space-between;\n  padding: 3.3rem 1.6rem; }\n\n.option__text {\n  color: #fff;\n  font-weight: 500;\n  font-size: 2rem;\n  margin: 0;\n  word-break: break-all; }\n\n.widget {\n  background: #464b5e;\n  border-radius: 5px;\n  margin-bottom: 4.8rem; }\n\n.widget-Header {\n  background: #3c4251;\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  color: #a5afd7;\n  display: flex;\n  justify-content: space-between;\n  padding: 1.6rem; }\n\n.widget--Title {\n  margin: 0; }\n\n.widget--contentTitle {\n  border-bottom: solid 1px #5c627b;\n  color: #a5afd7;\n  margin: 0;\n  padding: 3.3rem;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -23392,21 +23392,23 @@ var OptionModal = function OptionModal(props) {
         {
             isOpen: !!props.selectedOption,
             onRequestClose: props.dismissModal,
-            contentLabel: 'Selected Option'
+            contentLabel: 'Selected Option',
+            closeTimeoutMS: 200,
+            className: 'modal'
         },
         _react2.default.createElement(
             'h3',
-            null,
+            { className: 'modal__title' },
             'Selected Option'
         ),
         props.selectedOption && _react2.default.createElement(
             'p',
-            null,
+            { className: 'modal__body' },
             props.selectedOption
         ),
         _react2.default.createElement(
             'button',
-            { onClick: props.dismissModal },
+            { className: 'button', onClick: props.dismissModal },
             'OK'
         )
     );
